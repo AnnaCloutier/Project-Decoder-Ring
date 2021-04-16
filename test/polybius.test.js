@@ -1,5 +1,6 @@
 const expect = require("chai").expect;
-const caesar = require("../src/polybius");
+const polybiusModule = require("../src/polybius");
+const polybius = polybiusModule.polybius;
 
 describe("polybius", () => {
     it("should translate letters i and j to 42 when encoding", () => {   
@@ -11,7 +12,7 @@ describe("polybius", () => {
     });
 
 
-    it("should translate the number 42 to '(i/j) when decoding", () => {   
+    it("should translate the number 42 to '(i/j)' when decoding", () => {   
         const input = "42 4432423352 4244 4234 4233445124513444423322";
 
         const actual = polybius(input, encode = false);

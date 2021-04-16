@@ -1,12 +1,13 @@
 const expect = require("chai").expect;
-const caesar = require("../src/caesar");
+const caesarModule = require("../src/caesar");
+const caesar = caesarModule.caesar;
 
 describe("caesar", () => {
     it("should return false if shift is not between 1 and 25", () => {   
         const shift = 26;
+        const input = "Hello World";
 
         const actual = caesar(input, shift, encode = true);
-        const expected = false;
         expect(actual).to.be.false;
     });
 
@@ -55,7 +56,7 @@ describe("caesar", () => {
         const input = "B!rds & bees H8 the hashtag #tweetingtwitterbuzz";
         const shift = -9;
 
-        const actual = caesar(input, shift, encode = true);
+        const actual = caesar(input, shift, encode = false);
         const expected = "k!amb & knnb q8 cqn qjbqcjp #cfnncrwpcfrccnakdii"
         expect(actual).to.eql(expected);
     });

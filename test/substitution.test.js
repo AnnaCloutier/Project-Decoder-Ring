@@ -1,21 +1,22 @@
 const expect = require("chai").expect;
-const caesar = require("../src/substitution");
+const substitutionModule = require("../src/substitution");
+const substitution = substitutionModule.substitution;
 
 describe("substitution", () => {
     it("should return false the given alphabet is not exactly 26 characters in length", () => {   
         const alphabet = "qwertyuiopasdf";
+        const input = "Hello World";
 
         const actual = substitution(input, alphabet, encode = true);
-        const expected = false;
         expect(actual).to.be.false;
     });
 
 
     it("should return false the given alphabet contains duplicate characters", () => {   
         const alphabet = "qqwweerrttyyuuiiooppxxssdd";
+        const input = "Hello World";
 
         const actual = substitution(input, alphabet, encode = true);
-        const expected = false;
         expect(actual).to.be.false;
     });
 
@@ -26,7 +27,7 @@ describe("substitution", () => {
 
         const actual = substitution(input, alphabet, encode = true);
         const expected = "lqatl qsoct";
-        expect(actual).to.eql(expacted);
+        expect(actual).to.eql(expected);
     });
 
 
@@ -36,7 +37,7 @@ describe("substitution", () => {
 
         const actual = substitution(input, alphabet, encode = false);
         const expected = "sakes alive";
-        expect(actual).to.eql(expacted);
+        expect(actual).to.eql(expected);
     });
 
 
@@ -46,7 +47,7 @@ describe("substitution", () => {
 
         const actual = substitution(input, alphabet, encode = true);
         const expected = "esnee ljkkek jpe tpga erplke";
-        expect(actual).to.eql(expacted);
+        expect(actual).to.eql(expected);
     });
 
 
@@ -56,7 +57,7 @@ describe("substitution", () => {
 
         const actual = substitution(input, alphabet, encode = false);
         const expected = "swiss cheese has many spaces";
-        expect(actual).to.eql(expacted);
+        expect(actual).to.eql(expected);
     });
 
 
@@ -66,6 +67,6 @@ describe("substitution", () => {
 
         const actual = substitution(input, alphabet, encode = true);
         const expected = "kcbyob bphlob wrb eboo";
-        expect(actual).to.eql(expacted);
+        expect(actual).to.eql(expected);
     });
 });
